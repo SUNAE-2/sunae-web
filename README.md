@@ -4,3 +4,4 @@ Jessica Azcona
 Daniel Yamamoto
 Diego Jiménez
 Alejandro Garnica
+Carlos Morales
