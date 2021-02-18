@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    context = {
-        'titulo': 'bienvenido a sunae'
-    }
-    return render(request, 'index.html', context=context)
+    return render(request, 'index.html')
+
+def portfolio(request):
+    return render(request, 'portfolio-details.html')
