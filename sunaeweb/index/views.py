@@ -6,3 +6,6 @@ def index(request):
 
 def portfolio(request):
     return render(request, 'portfolio-details.html')
+
+def faq(request):
+    return render(request, 'faq.html')

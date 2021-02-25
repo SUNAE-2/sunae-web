@@ -188,6 +188,10 @@
     }
   });
 
+  $('.accordion').accordion({
+    toggle: false
+  })
+
   // Portfolio details carousel
   $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,
@@ -195,5 +199,7 @@
     loop: true,
     items: 1
   });
+
+
 
 })(jQuery);
