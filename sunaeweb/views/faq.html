@@ -1,219 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+{% extends './templates/index.html' %}
 
-  <title>SUNAE</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+{% block content %}
 
-  <!-- Favicons -->
-  <!-- TODO: Cambiar el favicon por el solecito del SUNAE-->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <!-- TODO: Cambiar por font usada en SUNAE-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <h1 class="logo mr-auto"><a href="{% url 'index' %}">SUNAE</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- TODO: Reemplazar por logo de SUNAE -->
-      <!-- <a href="{% url 'index' %}" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <!-- * Puede servir para la seccion de carreras-->
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
-
-    </div>
-  </header><!-- End Header -->
-
-
-    <!-- ======= Title Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+<section id="hero" class="d-flex align-items-center">
 
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1> Preguntas frecuentes </h1>
-          <h2>¿Tienes preguntas? ¡En este espacio podrás resolverlas y aprender más de nuestra comunidad! </h2>
+        <div class="row">
+            <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <h1> Preguntas frecuentes </h1>
+                <h2>¿Tienes preguntas? ¡En este espacio podrás resolverlas y aprender más de nuestra comunidad!
+                </h2>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                <img src="assets/img/faq/FAQ.png" class="img-fluid animated" alt="">
+            </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="assets/img/faq/FAQ.png" class="img-fluid animated" alt="">
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section class="container faq-sec">
+<section class="container faq-sec">
 
     <div class="section-title">
-      <span>Inscripciones</span>
-      <h2>Inscripciones</h2>
+        <span>Inscripciones</span>
+        <h2>Inscripciones</h2>
     </div>
 
     <div class="accordion" id="faqAccordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Cómo me puedo inscribir?
-          </button>
-          </h2>
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Cómo me puedo inscribir?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Puedes comprar el curso directo desde la página!
+                </div>
+            </div>
         </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
-          <div class="card-body">
-            Puedes comprar el curso directo desde la página!
-          </div>
-        </div>
-      </div>
 
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Cómo puedo conocer la oferta?
-            </button>
-          </h2>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Cómo puedo conocer la oferta?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                    En la sección de cursos disponibles :)
+                </div>
+            </div>
         </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
-          <div class="card-body">
-            En la sección de cursos disponibles :)
-          </div>
-        </div>
-      </div>
 
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              En que fechas inician los cursos?
-            </button>
-          </h2>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        En que fechas inician los cursos?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Revisa la sección de oferta para conocer más de las fechas!
+                </div>
+            </div>
         </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
-          <div class="card-body">
-            Revisa la sección de oferta para conocer más de las fechas!
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  <section class="container faq-sec">
+</section>
+
+<section class="container faq-sec">
 
     <div class="section-title">
-      <span> Cursos </span>
-      <h2>Cursos</h2>
+        <span> Cursos </span>
+        <h2>Cursos</h2>
     </div>
 
     <div class="accordion" id="faqAccordion2">
-      <div class="card">
-        <div class="card-header" id="headingOne2">
-          <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
-            Quiénes son los profesores?
-          </button>
-          </h2>
+        <div class="card">
+            <div class="card-header" id="headingOne2">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
+                        aria-expanded="true" aria-controls="collapseOne2">
+                        Quiénes son los profesores?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne2" data-parent="#faqAccordion2">
+                <div class="card-body">
+                    Contamos con los mejores profesores de diversas disciplinas! Para conocer más, ve la sección de
+                    profesores :)
+                </div>
+            </div>
         </div>
-        <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne2" data-parent="#faqAccordion2">
-          <div class="card-body">
-            Contamos con los mejores profesores de diversas disciplinas! Para conocer más, ve la sección de profesores :)
-          </div>
-        </div>
-      </div>
 
-      <div class="card">
-        <div class="card-header" id="headingTwo2">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-              Cuánto tiempo duran los cursos?
-            </button>
-          </h2>
+        <div class="card">
+            <div class="card-header" id="headingTwo2">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                        Cuánto tiempo duran los cursos?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2" data-parent="#faqAccordion2">
+                <div class="card-body">
+                    De dos semanas a un semestre, dependiendo del curso en particular.
+                </div>
+            </div>
         </div>
-        <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2" data-parent="#faqAccordion2">
-          <div class="card-body">
-            De dos semanas a un semestre, dependiendo del curso en particular.
-          </div>
-        </div>
-      </div>
 
-      <div class="card">
-        <div class="card-header" id="headingThree2">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
-              Qué material utilizan para enseñar?
-            </button>
-          </h2>
+        <div class="card">
+            <div class="card-header" id="headingThree2">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+                        Qué material utilizan para enseñar?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree2" class="collapse" aria-labelledby="headingThree2" data-parent="#faqAccordion2">
+                <div class="card-body">
+                    Diseñamos contenido especialmente para neustros cursos, con ayuda de expertos en pedagogía.
+                </div>
+            </div>
         </div>
-        <div id="collapseThree2" class="collapse" aria-labelledby="headingThree2" data-parent="#faqAccordion2">
-          <div class="card-body">
-            Diseñamos contenido especialmente para neustros cursos, con ayuda de expertos en pedagogía.
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-
-
-<!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-</html>
+{% endblock %}

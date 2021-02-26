@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    return render(request, 'index.html')
+def home(request, *args, **kwargs):
+    return render(request, 'home.html', {})
 
-def portfolio(request):
+def faq(request, *args, **kwargs):
+    return render(request, 'faq.html')
+
+def portfolio(request, *args, **kwargs):
     return render(request, 'portfolio-details.html')
 
-def faq(request):
-    return render(request, 'faq.html')
+def inner_page(request, *args, **kwargs):
+    return render(request, 'inner-page.html', {})
