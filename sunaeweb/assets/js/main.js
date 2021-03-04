@@ -189,7 +189,6 @@
     });
 
     $('.accordion').accordion({
-        toggle: false
     })
 
     // Portfolio details carousel
