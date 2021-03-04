@@ -3,7 +3,6 @@
 {% block content %}
 
 <section id="hero" class="d-flex align-items-center">
-
     <div class="container">
         <div class="row">
             <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -26,119 +25,26 @@
     </div>
 
     <div class="faq-cont">
-        <div class="accordion" id="faq1">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="false" aria-controls="collapseOne">
-                            Cómo me puedo inscribir?
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faq1">
-                    <div class="card-body">
-                        Puedes comprar el curso directo desde la página!
+        {% for q in ques %}
+             <div class="accordion" id="faq{{ q.id }}">
+                <div class="card">
+                    <div class="card-header" id="headingc">
+                        <h2 class="mb-0">
+                            <button class="btn btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ q.id }}"
+                                aria-expanded="false" aria-controls="collapse{{ q.id }}">
+                                {{ q.pregunta }}
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse{{ q.id }}" class="collapse" aria-labelledby="heading{{ q.id }}" data-parent="#faq{{ q.id }}">
+                        <div class="card-body">
+                            {{ q.respuesta }}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div  class="accordion" id="faq2">
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Cómo puedo conocer la oferta?
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faq2">
-                    <div class="card-body">
-                        En la sección de cursos disponibles :)
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion" id="faq3">
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            En que fechas inician los cursos?
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faq3">
-                    <div class="card-body">
-                        Revisa la sección de oferta para conocer más de las fechas!
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion" id="faq4">
-            <div class="card">
-                <div class="card-header" id="headingOne2">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
-                            aria-expanded="false" aria-controls="collapseOne2">
-                            Quiénes son los profesores?
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseOne2" class="collapse" aria-labelledby="headingOne2" data-parent="#faq4">
-                    <div class="card-body">
-                        Contamos con los mejores profesores de diversas disciplinas! Para conocer más, ve la sección de
-                        profesores :)
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion" id="faq5">
-            <div class="card">
-                <div class="card-header" id="headingTwo2">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-                            Cuánto tiempo duran los cursos?
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2" data-parent="#faq5">
-                    <div class="card-body">
-                        De dos semanas a un semestre, dependiendo del curso en particular.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion" id="faq6">
-            <div class="card">
-                <div class="card-header" id="headingThree2">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
-                            Qué material utilizan para enseñar?
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree2" class="collapse" aria-labelledby="headingThree2" data-parent="#faq6">
-                    <div class="card-body">
-                        Diseñamos contenido especialmente para neustros cursos, con ayuda de expertos en pedagogía.
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
-
-
-
 </section>
 
 {% endblock %}
