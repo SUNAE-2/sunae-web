@@ -3,14 +3,21 @@
 {% block content %}
 
     <section class="courses">
-        {% for course in courses %}
-            <div id="course-{{course.id}}" class="course">
-                <h2>{{course.name}}</h2>
-                <p>{{course.description}}</p>
-                <h3>{{course.dateOn}}</h3>
-                <h3>{{course.dateOff}}</h3>
-            </div>
-        {% endfor %}
+        
+        {% if courses|length %}
+            {% for course in courses %}
+                <div id="course-{{course.id}}" class="course">
+                    <h2>{{course.nombre}}</h2>
+                    <p>{{course.descripcion}}</p>
+                    <h3>{{course.fechaInicio}}</h3>
+                    <h3>{{course.fechaFinal}}</h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h2>NO HAY CURSOS DISPONIBLES POR EL MOMENTO</h2>
+            <h3>Vuelva pronto xd</h3>
+        {% endif %}
+
     </section>
 
 {% endblock %}

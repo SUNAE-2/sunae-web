@@ -1,9 +1,8 @@
 from django.db import models
 
-# Create your models here.
-class Course(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
-    dateOn = models.DateField()
-    dateOff = models.DateField()
-    isActive = models.BooleanField(default=False)
+class Cursos(models.Model):
+    nombre = models.CharField(max_length=20)
+    descripcion = models.CharField(max_length=100)
+    fechaInicio = models.DateField()
+    fechaFinal = models.DateField()
+    activo = models.BooleanField(default=True)

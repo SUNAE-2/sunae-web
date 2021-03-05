@@ -8,7 +8,6 @@ class Carrera(models.Model):
     def __str__(self):
         return self.nombre
 
-
 class Instructor(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
@@ -17,5 +16,3 @@ class Instructor(models.Model):
 
     def __str__(self):
         return self.nombre
-
-
