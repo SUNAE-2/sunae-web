@@ -1,0 +1,8 @@
+.courses {
+    padding: 30vh;
+    display: flex;
+}
+
+.course {
+    padding: 20px;
+}
