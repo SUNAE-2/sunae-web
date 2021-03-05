@@ -12,7 +12,7 @@ class Carrera(models.Model):
 class Instructor(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
-    correo = models.CharField(max_length=20)
+    correo = models.EmailField()
     activo = models.BooleanField()
 
     def __str__(self):

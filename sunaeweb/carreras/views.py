@@ -1,7 +1,9 @@
 from django.shortcuts import render
 
+from .models import Carrera
+
 def carreras(request, *args, **kwargs):
-    carre = carreer.objects.filter(active__exact=True)
+    carre = Carrera.objects.filter(activo__exact=True)
     context = {
         'carre': carre
     }
