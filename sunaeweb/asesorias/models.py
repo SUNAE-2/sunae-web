@@ -6,4 +6,4 @@ class Asesorias(models.Model):
     description = models.TextField()
     correo = models.EmailField()
     carrera= models.ForeignKey(Carrera, on_delete= models.CASCADE)
-    activo = models.BooleanField()
+    activo = models.BooleanField(default=True)
