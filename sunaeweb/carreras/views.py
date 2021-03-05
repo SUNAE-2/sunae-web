@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
-
 def carreras(request, *args, **kwargs):
-    return render(request, 'home.html', {})
+    carre = carreer.objects.filter(active__exact=True)
+    context = {
+        'carre': carre
+    }
+    return render(request, 'home.html', context=context)

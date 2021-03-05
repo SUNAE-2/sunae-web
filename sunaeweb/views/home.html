@@ -134,7 +134,22 @@
                 <h2>¿Qué Carreras Ofrecemos?</h2>
                 <p>¡Prepárate para iluminar tu futuro!</p>
             </div>
+    
+            {% for i in carre %}
 
+                <div class="accordion" id="carreras{{ i.id }}">
+                    <div class="card">
+                        <div class="card-header" id="headingc">
+                            <h2 class="mb-0">
+                                <button class="btn btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ i.id }}"
+                                    aria-expanded="false" aria-controls="collapse{{ i.id }}">
+                                    {{ i.carreer }}
+                                </button>
+                            </h2>
+
+            {% endfor %}
+
+<!--    
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="icon-box">
@@ -193,7 +208,7 @@
                 </div>
 
             </div>
-
+            -->
         </div>
     </section><!-- End Services Section -->
 
