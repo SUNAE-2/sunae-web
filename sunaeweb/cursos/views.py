@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Cursos
+from .models import Curso
 
 def course(request, *args, **kwargs):
-    cursos = Cursos.objects.filter(activo__exact=True)
+    cursos = Curso.objects.filter(activo__exact=True)
     context = {
         'courses': cursos
     }

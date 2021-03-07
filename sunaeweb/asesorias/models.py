@@ -1,7 +1,7 @@
 from django.db import models
 from carreras.models import Carrera
 
-class Asesorias(models.Model):
+class Asesoria(models.Model):
     alumno = models.CharField(max_length=20)
     description = models.TextField()
     correo = models.EmailField()
