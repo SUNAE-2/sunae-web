@@ -1,50 +1,57 @@
 {% extends './templates/index.html' %}
 
-{% block content %}
+{% load static %}
 
-<section id="hero" class="d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                <h1> Preguntas frecuentes </h1>
-                <h2>¿Tienes preguntas? ¡En este espacio podrás resolverlas y aprender más de nuestra comunidad!
-                </h2>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                <img src="assets/img/faq/FAQ.png" class="img-fluid animated" alt="">
+{% block title %}
+    <title>FAQ</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
+{% block body %}
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1> Preguntas frecuentes </h1>
+                    <h2>¿Tienes preguntas? ¡En este espacio podrás resolverlas y aprender más de nuestra comunidad!
+                    </h2>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                    <img src="assets/img/faq/FAQ.png" class="img-fluid animated" alt="">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="container faq-sec">
+    <section class="container faq-sec">
+        <div class="section-title">
+            <span>Inscripciones</span>
+            <h2>Inscripciones</h2>
+        </div>
 
-    <div class="section-title">
-        <span>Inscripciones</span>
-        <h2>Inscripciones</h2>
-    </div>
-
-    <div class="faq-cont">
-        {% for q in ques %}
-            <div class="accordion" id="faq{{ q.id }}">
-                <div class="card">
-                    <div class="card-header" id="headingc">
-                        <h2 class="mb-0">
-                            <button class="btn btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ q.id }}"
-                                aria-expanded="false" aria-controls="collapse{{ q.id }}">
-                                {{ q.pregunta }}
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapse{{ q.id }}" class="collapse" aria-labelledby="heading{{ q.id }}" data-parent="#faq{{ q.id }}">
-                        <div class="card-body">
-                            {{ q.respuesta }}
+        <div class="faq-cont">
+            {% for q in ques %}
+                <div class="accordion" id="faq{{ q.id }}">
+                    <div class="card">
+                        <div class="card-header" id="headingc">
+                            <h2 class="mb-0">
+                                <button class="btn btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ q.id }}"
+                                    aria-expanded="false" aria-controls="collapse{{ q.id }}">
+                                    {{ q.pregunta }}
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse{{ q.id }}" class="collapse" aria-labelledby="heading{{ q.id }}" data-parent="#faq{{ q.id }}">
+                            <div class="card-body">
+                                {{ q.respuesta }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
-
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}

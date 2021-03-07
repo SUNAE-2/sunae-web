@@ -1,0 +1,59 @@
+{% extends './templates/index.html' %} 
+
+{% load static %} 
+
+{% block title %}
+    <title>ASESORIAS</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/asesorias.css' %}">
+{% endblock %} 
+
+{% block body %}
+    <section class="main-block">
+        <div class="left-part">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>Regístrate a nuestras asesorías</h1>
+            <p>Sitio para asesorías</p>
+            <div class="btn-group"></div>
+        </div>
+
+        <form action="/">
+            <div class="title">
+                <i class="fas fa-pencil-alt"></i>
+                <h2>Regístrate aquí</h2>
+            </div>
+
+            <div class="info">
+                <input
+                    class="fname"
+                    type="text"
+                    name="name"
+                    placeholder="Nombre completo"
+                />
+                <input type="text" name="name" placeholder="Email" />
+                
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Descripción del problema"
+                />
+
+                <select name="Carrera">
+                    <option value="biology-courses">Biología</option>
+                    <option value="medicine-courses">Medicina</option>
+                    <option value="engineering">Ingeniería</option>
+                    <option value="Laws">Derecho</option>
+                    <option value="Vet">Veterinaria</option>
+                    <option value="Physics">Física</option>
+                    <option value="odontology">Odontología</option>
+                </select>
+            </div>
+
+            <div class="checkbox"></div>
+
+            <button type="submit" href="/">Registrarme</button>
+        </form>
+    </section>
+{% endblock %}

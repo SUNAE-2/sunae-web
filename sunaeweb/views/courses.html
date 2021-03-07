@@ -1,9 +1,17 @@
 {% extends './templates/index.html' %}
 
-{% block content %}
+{% load static %}
 
+{% block title %}
+    <title>CURSOS</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}">
+{% endblock %}
+
+{% block body %}
     <section class="courses">
-        
         {% if courses|length %}
             {% for course in courses %}
                 <div id="course-{{course.id}}" class="course">
@@ -17,7 +25,5 @@
             <h2>NO HAY CURSOS DISPONIBLES POR EL MOMENTO</h2>
             <h3>Vuelva pronto xd</h3>
         {% endif %}
-
     </section>
-
 {% endblock %}

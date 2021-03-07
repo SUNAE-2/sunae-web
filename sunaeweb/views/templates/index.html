@@ -1,104 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>SUNAE</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <!-- TODO: Cambiar el favicon por el solecito del SUNAE-->
-    <link rel="icon" href="assets/img/favicon.png">
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
-    <!-- Google Fonts -->
-    <!-- TODO: Cambiar por font usada en SUNAE-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i">
-
-    <!-- Vendor CSS Files -->
-    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/icofont/icofont.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/boxicons/css/boxicons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/venobox/venobox.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
-
-    <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
-    <link rel="stylesheet" href="{% static 'css/courses.css' %}">
-
     <!-- =======================================================
   * Template Name: SUNAE - v2.2.1
   * Template URL: https://bootstrapmade.com/SUNAE-free-simple-bootstrap-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
     ======================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    {% block title %}
+        {% comment %} TITLE {% endcomment %}
+    {% endblock %}
+
+    <link rel="icon" href="{% static 'img/favicon.png' %} ">
+    <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %} ">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i">
+
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/icofont/icofont.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/boxicons/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/venobox/venobox.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block css %}
+        {% comment %} CSS {% endcomment %}
+    {% endblock %}
 </head>
-
 <body>
-
     {% include './header.html' %}
 
-    <!-- ======= Main ======= -->
     <main id="main">
-
-        {% block content %}
-
+        {% block body %}
+            {% comment %} BODY {% endcomment %}
         {% endblock %}
+    </main>
 
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-
-        <div class="footer-top">
-
-            <div class="container">
-
-                <div class="row  justify-content-center">
-                    <div class="col-lg-6">
-                        <h3>SUNAE</h3>
-                        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe
-                            commodi placeat.</p>
-                    </div>
-                </div>
-
-                <div class="row footer-newsletter justify-content-center">
-                    <div class="col-lg-6">
-                        <form action="" method="post">
-                            <input type="email" name="email" placeholder="Enter your Email"><input type="submit"
-                                value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container footer-bottom clearfix">
-            <div class="copyright">
-                &copy; Copyright <strong><span>SUNAE</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-            </div>
-        </div>
-    </footer><!-- End Footer -->
+    {% include './footer.html' %}
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-    <!-- Vendor JS Files -->
     <script async src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <script async src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script async src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
@@ -108,9 +55,6 @@
     <script async src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
     <script async src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
 
-    <!-- Template Main JS File -->
     <script src="{% static 'js/main.js' %}"></script>
-
 </body>
-
 </html>

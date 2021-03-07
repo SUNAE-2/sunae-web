@@ -1,7 +1,12 @@
 {% extends './templates/index.html' %}
 
-{% block content %}
+{% load static %}
 
+{% block title %}
+    <title>SUNAE</title>
+{% endblock %}
+
+{% block body %}
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
 
@@ -19,7 +24,7 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img">
                     <!-- TODO: Reemplazar por una imagen mas apropiada a la educacion -->
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                    <img src="{% static 'img/hero-img.png' %}" class="img-fluid animated" alt="">
                 </div>
             </div>
         </div>
@@ -69,7 +74,7 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="assets/img/about.png" class="img-fluid" alt="">
+                    <img src="{% static 'img/about.png' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>Sociedad conformada por estudiantes de las licenciaturas que presentan mayor porcentaje de deserción
@@ -236,11 +241,11 @@
             <div class="row portfolio-container">
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>App 1</h4>
                         <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-1.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -248,11 +253,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>Web 3</h4>
                         <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-2.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -260,11 +265,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>App 2</h4>
                         <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -272,11 +277,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>Card 2</h4>
                         <p>Card</p>
-                        <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -284,11 +289,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>Web 2</h4>
                         <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-5.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -296,11 +301,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>App 3</h4>
                         <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-6.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -308,11 +313,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>Card 1</h4>
                         <p>Card</p>
-                        <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-7.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -320,11 +325,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>Card 3</h4>
                         <p>Card</p>
-                        <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-8.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -332,11 +337,11 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                    <img src="{% static 'img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>Web 3</h4>
                         <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery"
+                        <a href="{% static 'img/portfolio/portfolio-9.jpg' %}" data-gall="portfolioGallery"
                             class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
                         <a href="{% url 'portfolio-details' %}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -366,7 +371,7 @@
                         Soy el hijo de izzo en el fortnite
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                    <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
                     <h3>Carlos Morales</h3>
                     <h4>Ceo del SIMP</h4>
                 </div>
@@ -377,7 +382,7 @@
                         Con eso te armabas una linux bro
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                    <img src="{% static 'img/testimonials/testimonials-2.jpeg' %}" class="testimonial-img" alt="">
                     <h3>Daniel Yamamoto</h3>
                     <h4>Programador de videojuegos</h4>
                 </div>
@@ -388,7 +393,7 @@
                         Revisar en junta
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
-                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                    <img src="{% static 'img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
                     <h3>Jena Karlis</h3>
                     <h4>Store Owner</h4>
                 </div>
@@ -399,7 +404,7 @@
                         Revisar en junta
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
-                    <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                    <img src="{% static 'img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
                     <h3>Matt Brandon</h3>
                     <h4>Freelancer</h4>
                 </div>
@@ -410,7 +415,7 @@
                         Revisar en junta
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
-                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                    <img src="{% static 'img/testimonials/testimonials-5.jpeg' %}" class="testimonial-img" alt="">
                     <h3>John Larson</h3>
                     <h4>Entrepreneur</h4>
                 </div>
@@ -448,7 +453,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/team/team-1.jpg" alt="">
+                        <img src="{% static 'img/team/team-1.jpg' %}" alt="">
                         <h4>Walter White</h4>
                         <span>Chief Executive Officer</span>
                         <p>
@@ -466,7 +471,7 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/team/team-2.jpg" alt="">
+                        <img src="{% static 'img/team/team-2.jpeg' %}" alt="">
                         <h4>Sarah Jhinson</h4>
                         <span>Product Manager</span>
                         <p>
@@ -484,7 +489,7 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/team/team-3.jpg" alt="">
+                        <img src="{% static 'img/team/team-3.jpg' %}" alt="">
                         <h4>William Anderson</h4>
                         <span>CTO</span>
                         <p>
@@ -580,10 +585,7 @@
                         <div class="text-center"><button type="submit">Send Message</button></div>
                     </form>
                 </div>
-
             </div>
-
         </div>
     </section><!-- End Contact Section -->
-
 {% endblock %} 
