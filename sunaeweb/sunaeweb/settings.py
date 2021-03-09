@@ -129,3 +129,6 @@ STATIC_URL = "/assets/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'assets/')
 ]
+
+EMAIL_HOST="localhost"
+EMAIL_PORT=1025

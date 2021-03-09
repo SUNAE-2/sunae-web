@@ -1,7 +1,7 @@
 from django.db import models
 
 class Carrera(models.Model):
-    nombre = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=20, unique=True)
     descripcion = models.TextField()
     activo = models.BooleanField(default=True)
 
@@ -16,3 +16,11 @@ class Instructor(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Coordinador(models.Model):
+    carrera = models.OneToOneField(Carrera, on_delete=models.CASCADE)
+    coordinador = models.OneToOneField(Instructor, on_delete=models.CASCADE)
+    activo = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.carrera.nombre + " - " + self.coordinador.nombre
