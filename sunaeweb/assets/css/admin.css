@@ -1,50 +1,49 @@
-
 #container * {
-  font-family:"Montserrat"
+    font-family: "Montserrat"
 }
 
-#branding #site-name a{
-  color:#FF9D37;
-  font-weight:600;
-  font-size:calc(22px + 0.5vw);
-  letter-spacing: 0.02vw;
+#branding #site-name a {
+    color: #FF9D37;
+    font-weight: 600;
+    font-size: calc(22px + 0.5vw);
+    letter-spacing: 0.02vw;
 }
 
-#header{
-  background-color: #4974B7;
-  color:white;
-  height:5vw;
+#header {
+    background-color: #4974B7;
+    color: white;
+    height: 5vw;
 }
 
-#logo{
-  width:4vw;
-  height:auto;
-  object-fit:contain;
+#logo {
+    width: 4vw;
+    height: auto;
+    object-fit: contain;
 }
 
-#user-tools{
-  font-size: calc(12px + 0.1vw);
+#user-tools {
+    font-size: calc(12px + 0.1vw);
 }
 
-.module caption{
-  background-color:#3292F9;
+.module caption {
+    background-color: #3292F9;
 }
 
 #nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
-color: #F9CB32;
-font-weight: bold; !important
+    color: #F9CB32;
+    font-weight: bold;
+    !important
 }
 
 #main #nav-sidebar .current-model {
-background: #fcedb9;
+    background: #fcedb9;
 }
 
-#main .object-tools a:focus, .object-tools a:hover{
-  background-color:#3292F9;
-  color:white;
+#main .object-tools a:focus, .object-tools a:hover {
+    background-color: #3292F9;
+    color: white;
 }
 
-div.breadcrumbs{
-  background-color: #819ecd;
+div.breadcrumbs {
+    background-color: #819ecd;
 }
-
