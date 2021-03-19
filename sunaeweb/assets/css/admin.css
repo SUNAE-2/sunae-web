@@ -47,3 +47,12 @@
 div.breadcrumbs {
     background-color: #819ecd;
 }
+
+#header a:hover{
+    color:#FF9D37;
+    border-color:#FF9D37;
+}
+
+#main{
+    margin-top: 4vw;
+}
