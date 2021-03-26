@@ -1,13 +1,14 @@
 from django.db import models
+# from django.urls import reverse
 
 class Carrera(models.Model):
     nombre = models.CharField(max_length=20, unique=True)
     descripcion = models.TextField()
     activo = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.nombre
-
+""" def get_absolute_url(self):
+        return reverse('carreras:carrera', kwargs={'id': self.id})
+"""
 class Instructor(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
