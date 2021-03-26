@@ -6,9 +6,12 @@ class Carrera(models.Model):
     descripcion = models.TextField()
     activo = models.BooleanField(default=True)
 
-""" def get_absolute_url(self):
-        return reverse('carreras:carrera', kwargs={'id': self.id})
-"""
+    # def get_absolute_url(self):
+    #     return reverse('carreras:carrera', kwargs={'id': self.id})
+
+    def __str__(self):
+        return self.nombre
+    
 class Instructor(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
