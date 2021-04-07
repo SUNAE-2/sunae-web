@@ -7,14 +7,17 @@
     --secondary-color-blue: #3292F9;
     --secondary-color-orange: #FF7534;
     --secondary-color-beige: #FFC3A7;
-    
-    font-family: 'Montserrat', sans-serif;
 }
 
 .flex-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+html, 
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* CHANGE COLORS BOOTSTRAP */

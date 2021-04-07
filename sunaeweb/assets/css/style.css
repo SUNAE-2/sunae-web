@@ -8,8 +8,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html, body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
-    font-family: "Open Sans", sans-serif;
     color: #444444;
 }
 
@@ -28,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Raleway", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -124,7 +127,7 @@ h6 {
     color: #5f687b;
     transition: 0.3s;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .nav-menu a:hover,
@@ -373,7 +376,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-    font-family: "Raleway", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -624,7 +627,7 @@ section {
 .counts .counters p {
     padding: 0;
     margin: 0 0 20px 0;
-    font-family: "Raleway", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 600;
 }
@@ -870,7 +873,7 @@ section {
 }
 
 .cta .cta-btn {
-    font-family: "Raleway", sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 16px;
@@ -1285,7 +1288,7 @@ section {
     font-weight: 700;
     color: #5f687b;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 0;
     margin-bottom: 0;
 }
