@@ -17,6 +17,8 @@ class Instructor(models.Model):
     nombre = models.CharField(max_length=20)
     correo = models.EmailField()
     activo = models.BooleanField(default=True)
+    descripcion = models.TextField()
+    imagen = models.ImageField()
 
     def __str__(self):
         return self.nombre
