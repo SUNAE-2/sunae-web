@@ -1,0 +1,42 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href="{% static 'css/admin.css' %}">
+    <link rel='stylesheet' href="{% static 'css/reportes.css' %}">
+{% endblock %}
+
+{% block extrahead %}
+    <script src="{% static 'js/xlsx.full.min.js' %}"></script>
+    <script src="{% static 'js/report.js' %}"> </script>
+{% endblock %}
+
+
+{% block content %}
+    <h1> Reporte {{ date }} </h1>
+    <a id="descarga"> Descargar reporte </a>
+    {% for model in models %}
+    <div class="module">
+        <table>
+            <caption class="section"> {{ model.name }}</caption>
+            <thead>
+                {% for head in model.headings %}
+                    <th> {{ head }}</th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for row in model.rows %}
+                    <tr>
+                        {% for cell in row %}
+                            <td> {{ cell }} </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+{% endblock %}
+

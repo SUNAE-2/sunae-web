@@ -1,13 +1,11 @@
 {% extends "admin/base.html" %}
-{% load static %}
-
+{% load static i18n %}
 
 {% block extrastyle %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel='stylesheet' href="{% static 'css/admin.css' %}">
 {% endblock %}
-
 
 {% block branding %}
     <h1 id="site-name">
@@ -18,3 +16,9 @@
     </h1>
 {% endblock %}
 
+{% block userlinks %}
+    <a href="/">Ver sitio</a> /
+    <a href="/admin/reporte"> Obtener reporte </a> /
+    <a href="/admin/password_change/">Cambiar contraseña</a> /
+    <a href="/admin/logout/">Cerrar sesión</a>
+{% endblock %}

@@ -7,3 +7,6 @@ class Asesoria(models.Model):
     correo = models.EmailField()
     carrera= models.ForeignKey(Carrera, on_delete= models.CASCADE)
     activo = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.carrera) + " " + self.alumno

@@ -3,14 +3,14 @@
 }
 
 #branding #site-name a {
-    color: #FF9D37;
+    color: white;
     font-weight: 600;
     font-size: calc(22px + 0.5vw);
     letter-spacing: 0.02vw;
 }
 
 #header {
-    background-color: #4974B7;
+    background-color: #3292F9;
     color: white;
     height: 5vw;
 }
@@ -26,7 +26,7 @@
 }
 
 .module caption {
-    background-color: #3292F9;
+    background-color: #4974B7;
 }
 
 #nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
