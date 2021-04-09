@@ -1,19 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Carrera, Instructor
 
-def carreras(request, *args, **kwargs):
-    carre = Carrera.objects.filter(activo__exact=True)
-    context = {
-        'carre': carre
-    }
-    return render(request, 'home.html', context=context)
+# def carrera(request, id):
+#     carre = Carrera.objects.get(id=id)
+#     # instr = Instructor.objects.filter(carre.nombre)
+#     context = {
+#         'carrera': carre,
+#         'instructor': instr
+#     }
+#     return render(request, 'carrera.html', context=context)
 
 def carrera(request, id):
-    carre = Carrera.objects.get(id=id)
-    instr = Instructor.objects.filter(carre.nombre)
+    obj = get_object_or_404(Carrera, id=id) 
     context = {
-        'carrera': carre,
-        'instructor': instr
+        'object': obj
     }
     return render(request, 'carrera.html', context=context)

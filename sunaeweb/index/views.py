@@ -1,14 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Pregunta
 from asesorias.models import Asesoria
 from django.utils import timezone
+from carreras.models import Carrera
 import django.apps
 
 
 # Create your views here.
 def home(request, *args, **kwargs):
-    return render(request, 'home.html', {})
+    carre = Carrera.objects.filter(activo__exact=True)
+    context = {
+        'carre': carre
+    }
+    return render(request, 'home.html', context=context)
+
+
+
+def carrera(request, id):
+    obj = get_object_or_404(Carrera, id=id) 
+    context = {
+        'object': obj
+    }
+    return render(request, 'carrera.html', context=context)
+
 
 
 def faq(request, *args, **kwargs):
@@ -19,12 +34,12 @@ def faq(request, *args, **kwargs):
     return render(request, 'faq.html', context=context)
 
 
-def portfolio(request, *args, **kwargs):
-    return render(request, 'portfolio-details.html')
+# def portfolio(request, *args, **kwargs):
+#     return render(request, 'portfolio-details.html', {})
 
 
-def inner_page(request, *args, **kwargs):
-    return render(request, 'inner-page.html', {})
+# def inner_page(request, *args, **kwargs):
+#     return render(request, 'inner-page.html', {})
 
 
 def filterModels(allowed, all):
@@ -44,7 +59,7 @@ def reports(request, *args, **kwargs):
     models = []
     for c in models_class:
         d = {'name': c.__name__,
-             'headings': [field.name for field in filter(lambda x: not 'Rel' in str(x), c._meta.get_fields())]}
+            'headings': [field.name for field in filter(lambda x: not 'Rel' in str(x), c._meta.get_fields())]}
         d['rows'] = list(map(lambda tuple: [getattr(tuple, field) for field in d['headings']], c.objects.all()))
         models.append(d)
     context = {
