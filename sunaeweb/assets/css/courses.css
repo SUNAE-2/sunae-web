@@ -1,8 +1,27 @@
 .courses {
-    padding: 30vh;
+    padding: 12vh 2rem;
     display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .course {
-    padding: 20px;
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.course > div {
+    height: 100%;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid #CCC;
+    box-shadow: 10px 1rem 1rem rgba(0, 0, 0, 0.1);
 }

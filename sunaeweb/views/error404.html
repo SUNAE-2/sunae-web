@@ -1,0 +1,22 @@
+{% extends './templates/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Error404</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/error404.css' %}">
+{% endblock %}
+
+{% block body %}
+    <section class="error404">
+        <div>
+            <h1>No puede ser:(</h1>
+            <img src="{% static 'img/cheems.jpg' %}" class="">
+            <h2>A la página le dio amsiedad</h2>
+            <h3>Intente de nuevo recargando la página</h3>
+        </div>
+    </section>
+{% endblock %}

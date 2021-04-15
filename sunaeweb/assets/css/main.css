@@ -9,6 +9,18 @@
     --secondary-color-beige: #FFC3A7;
 }
 
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+}
+
 .flex-container {
     display: flex;
     align-items: center;

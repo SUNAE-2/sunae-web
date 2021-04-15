@@ -14,6 +14,7 @@ def home(request, *args, **kwargs):
         'carre': carre
     }
     return render(request, 'home.html', context=context)
+    #return render(request, 'error404.html', context=context)
 
 
 

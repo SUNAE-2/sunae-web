@@ -14,16 +14,17 @@
     <section class="courses">
         {% if courses|length %}
             {% for course in courses %}
-                <div id="course-{{course.id}}" class="course">
-                    <h2>{{course.nombre}}</h2>
-                    <p>{{course.descripcion}}</p>
-                    <h3>{{course.fechaInicio}}</h3>
-                    <h3>{{course.fechaFinal}}</h3>
+                <div class="course">
+                    <div id="course-{{course.id}}">
+                        <h2>{{course.nombre}}</h2>
+                        <p>{{course.descripcion}}</p>
+                        <h3>{{course.fechaInicio}}</h3>
+                        <h3>{{course.fechaFinal}}</h3>
+                    </div>
                 </div>
             {% endfor %}
         {% else %}
             <h2>NO HAY CURSOS DISPONIBLES POR EL MOMENTO</h2>
-            <h3>Vuelva pronto xd</h3>
         {% endif %}
     </section>
 {% endblock %}
