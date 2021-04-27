@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    <title></title>
+    <title>{{object.nombre}}</title>
 {% endblock %}
 
 {% block css %}
@@ -13,8 +13,16 @@
 {% block body %}
 
     <section>
+        <br><br><br><br><br><br><br><br>
         <p>{{object.nombre}}</p>
         <p>{{object.descripcion}}</p>
+        
+        {% for i in instructor %}
+            <img src="{{BASIC_DIR}}/{{i.imagen.url}}" width="120" />
+            <p>{{i.nombre}}</p>
+            <p>{{i.descripcion}}</p>
+        {% endfor %}
+
     </section>
 
 {% endblock %}

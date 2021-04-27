@@ -17,16 +17,6 @@ def home(request, *args, **kwargs):
     #return render(request, 'error404.html', context=context)
 
 
-
-def carrera(request, id):
-    obj = get_object_or_404(Carrera, id=id) 
-    context = {
-        'object': obj
-    }
-    return render(request, 'carrera.html', context=context)
-
-
-
 def faq(request, *args, **kwargs):
     ques = Pregunta.objects.filter(activa__exact=True)
     context = {
