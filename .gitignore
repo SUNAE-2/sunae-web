@@ -36,6 +36,6 @@ local_settings.py
 *.sqlite3
 migrations/
 
-assets/img/carreras
-assets/img/instructores
-assets/img/coordinadores
+assets/img/carreras/
+assets/img/instructores/
+assets/img/coordinadores/
