@@ -44,7 +44,6 @@
     </main>
 
     {% include './footer.html' %}
-
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <script src="{% static 'vendor/jquery/jquery.min.js' %}" defer></script>
@@ -56,6 +55,9 @@
     <script src="{% static 'vendor/venobox/venobox.min.js' %}" defer></script>
     <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}" defer></script>
 
-    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    {% block scripts %}
+        {% comment %} scripts {% endcomment %}
+    {% endblock %}
 </body>
 </html>

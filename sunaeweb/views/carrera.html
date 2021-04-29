@@ -3,26 +3,36 @@
 {% load static %}
 
 {% block title %}
-    <title>{{object.nombre}}</title>
+    <title>{{object.nombre.capitalize}}</title>
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carrera.css' %}">
 {% endblock %}
 
 {% block body %}
 
     <section>
-        <br><br><br><br><br><br><br><br>
-        <p>{{object.nombre}}</p>
+        <h1 class="title">{{object.nombre}}</h1>
         <p>{{object.descripcion}}</p>
         
-        {% for i in instructor %}
-            <img src="{{BASIC_DIR}}/{{i.imagen.url}}" width="120" />
-            <p>{{i.nombre}}</p>
-            <p>{{i.descripcion}}</p>
-        {% endfor %}
-
+        <div class="">
+            {% for i in instructor %}
+            <div class="instructor">
+                <div>    
+                    <img src="{{BASIC_DIR}}/{{i.imagen.url}}" width="120" />
+                    <p>{{i.nombre}}</p>
+                    <p>Contacto</p>
+                    <p>{{i.correo}}</p>
+                    <p>{{i.descripcion}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </section>
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/getColor.js' %}" defer></script>
 {% endblock %}

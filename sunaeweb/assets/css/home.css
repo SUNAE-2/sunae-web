@@ -1,0 +1,215 @@
+.contador-alumnos {
+    display: flex;
+    align-items: center;
+    justify-content:center
+}
+
+.carreras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.carreras > div {
+    padding: 2%;
+    width: calc(100% / 3);
+}
+
+.carreras > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    max-width: 100%;
+    height: 100%;
+    padding: 5% 3%;
+    border-radius: 10px;
+    border: 1px solid #CCC;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.carreras > div > div:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
+}
+
+.carreras > div > div:hover > a:first-child {
+    color: var(--primary-color-orange);
+}
+
+.carreras > div > div > a:first-child {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--primary-color-blue);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.carreras > div > div > a > img {
+    margin: 1.2rem 0;
+    width: 120px;
+}
+
+.carreras > div > div > p {
+    text-align: center;
+    padding: 0 3px;
+    min-height: 200px;
+    max-height: 200px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+/* CHANGE COLORS BOOTSTRAP */
+a {
+    color: var(--primary-color-blue); 
+}
+
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+    color: var(--primary-color-blue); 
+}
+
+.nav-menu .drop-down ul a:hover,
+.nav-menu .drop-down ul .active > a,
+.nav-menu .drop-down ul li:hover > a {
+    color: var(--primary-color-blue); 
+}
+
+.back-to-top i {
+    background: var(--primary-color-blue); 
+}
+
+.back-to-top i:hover {
+    background: var(--secondary-color-blue); 
+}
+
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
+    color: var(--primary-color-blue); 
+}
+
+#hero .btn-get-started {
+    background: var(--primary-color-blue); 
+    box-shadow: 0 8px 28px rgba(var(--secondary-color-blue), 0.45);
+}
+
+#hero .btn-get-started:hover {
+    background: var(--secondary-color-blue); 
+    box-shadow: 0 8px 28px rgba(var(--primary-color-blue), 0.45);
+}
+
+#hero .btn-watch-video:hover i {
+    color: var(--primary-color-blue); 
+}
+
+.featured-services .icon i {
+    color: var(--primary-color-blue); 
+}
+
+.featured-services .icon-box:hover .title a {
+    color: var(--primary-color-blue); 
+}
+
+.about .content ul i {
+    color: var(--primary-color-blue); 
+}
+
+.counts .counters span {
+    color: var(--primary-color-blue); 
+}
+
+.services .icon-box .icon i {
+    color: var(--primary-color-blue); 
+}
+
+.services .icon-box:hover h4 a {
+    color: var(--primary-color-blue); 
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+    color: var(--primary-color-blue); 
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+    color: var(--primary-color-blue); 
+}
+
+.testimonials .owl-dot.active {
+    background-color: var(--primary-color-blue) !important;
+}
+
+.cta {
+    background: var(--primary-color-blue);
+}
+
+.cta .cta-btn:hover {
+    background: #fff;
+    border: 2px solid #fff;
+    color: var(--secondary-color-blue);
+    box-shadow: 0 8px 28px rgba(var(--secondary-color-blue), 0.45);
+}
+
+.team .member .social a:hover {
+    color: var(--primary-color-blue); 
+}
+
+.contact .info {
+    border-top: 3px solid var(--primary-color-blue);
+    border-bottom: 3px solid var(--primary-color-blue);
+}
+
+.contact .info i {
+    color: var(--primary-color-blue); 
+}
+
+.contact .info .social-links a:hover {
+    background: var(--primary-color-blue);
+    color: #fff;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+    background: var(--primary-color-blue);
+}
+
+.contact .php-email-form {
+    border-top: 3px solid var(--primary-color-blue);
+    border-bottom: 3px solid var(--primary-color-blue);
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+    border-color: var(--primary-color-blue);
+}
+
+.contact .php-email-form button[type="submit"] {
+    background: var(--primary-color-blue);
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+    background: var(--secondary-color-blue); 
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot.active {
+    background-color: var(--primary-color-blue) !important;
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"] {
+    background: var(--primary-color-blue);
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+    background: var(--secondary-color-blue); 
+}
+
+#footer .footer-top .social-links a:hover {
+    background: var(--primary-color-blue);
+}
