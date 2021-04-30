@@ -25,4 +25,7 @@ urlpatterns = [
     path('cursos/', include('cursos.urls')),
 ]
 
+handler404 = 'index.views.handler404'
+handler500 = 'index.views.handler500'
+
 urlpatterns += staticfiles_urlpatterns()

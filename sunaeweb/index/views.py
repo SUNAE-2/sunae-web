@@ -1,3 +1,4 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Pregunta
@@ -24,6 +25,12 @@ def faq(request, *args, **kwargs):
     }
     return render(request, 'faq.html', context=context)
 
+##########ERROR HANDLERS#############
+def handler404(request, *args, **argv):
+    return render(request, 'error404.html')
+
+def handler500(request, *args, **argv):
+    return render(request, 'error404.html')
 
 # def portfolio(request, *args, **kwargs):
 #     return render(request, 'portfolio-details.html', {})

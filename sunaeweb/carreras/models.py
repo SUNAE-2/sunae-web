@@ -8,7 +8,7 @@ class Carrera(models.Model):
     activo = models.BooleanField(default=True)
 
     def get_absolute_url(self):
-        return reverse('carrera', kwargs={'id': self.id})
+        return reverse('carrera', kwargs={'nombre': self.nombre})
 
     def __str__(self):
         return self.nombre
@@ -16,6 +16,7 @@ class Carrera(models.Model):
 class Instructor(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
+    materia = models.CharField(max_length=40)
     correo = models.EmailField()
     descripcion = models.TextField(default="")
     imagen = models.ImageField(default=None, upload_to='assets/img/instructores')
