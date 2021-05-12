@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.db import models
 from carreras.models import Coordinador
 from .models import Asesoria
+
 def send_email(request):
     name = request.POST.get('name', '')
     carrera = request.POST.get('carrera', '')

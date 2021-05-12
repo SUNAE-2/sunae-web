@@ -38,6 +38,7 @@ form {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    color: #eee;
 }
 
 .info {
@@ -54,7 +55,7 @@ input, select {
 }
 
 select,
-input::placeholder {
+input::placeholder, input {
     color: #eee;
 }
 

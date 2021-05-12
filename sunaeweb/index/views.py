@@ -18,19 +18,13 @@ def home(request, *args, **kwargs):
     #return render(request, 'error404.html', context=context)
 
 
-def faq(request, *args, **kwargs):
-    ques = Pregunta.objects.filter(activa__exact=True)
+def carrera(request, id):
+    obj = get_object_or_404(Carrera, id=id) 
     context = {
-        'ques': ques
+        'object': obj
     }
-    return render(request, 'faq.html', context=context)
+    return render(request, 'carrera.html', context=context)
 
-##########ERROR HANDLERS#############
-def handler404(request, *args, **argv):
-    return render(request, 'error404.html')
-
-def handler500(request, *args, **argv):
-    return render(request, 'error404.html')
 
 # def portfolio(request, *args, **kwargs):
 #     return render(request, 'portfolio-details.html', {})
@@ -38,6 +32,23 @@ def handler500(request, *args, **argv):
 
 # def inner_page(request, *args, **kwargs):
 #     return render(request, 'inner-page.html', {})
+
+
+def faq(request, *args, **kwargs):
+    ques = Pregunta.objects.filter(activa__exact=True)
+    context = {
+        'ques': ques
+    }
+    return render(request, 'faq.html', context=context)
+
+
+##########ERROR HANDLERS#############
+def handler404(request, *args, **argv):
+    return render(request, 'error404.html')
+
+
+def handler500(request, *args, **argv):
+    return render(request, 'error404.html')
 
 
 def filterModels(allowed, all):

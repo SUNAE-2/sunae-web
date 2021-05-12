@@ -1,6 +1,6 @@
-{% extends './templates/index.html' %} 
+{% extends './templates/index.html' %}
 
-{% load static %} 
+{% load static %}
 
 {% block title %}
     <title>ASESORIAS</title>
@@ -8,51 +8,33 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/asesorias.css' %}">
-{% endblock %} 
+{% endblock %}
 
 {% block body %}
+
     <section class="main-block">
         <div class="left-part">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h1>Regístrate a nuestras asesorías</h1>
-                    <p>Sitio para asesorías</p>
-                    <div class="btn-group"></div>
-                </div>
+            <i class="fas fa-graduation-cap"></i>
+            <h1>Regístrate a nuestras asesorías</h1>
+            <p>Sitio para asesorías</p>
+            <div class="btn-group"></div>
+        </div>
 
-                <form action="/">
-                    <div class="title">
-                        <i class="fas fa-pencil-alt"></i>
-                        <h2>Regístrate aquí</h2>
-                    </div>
+        <form method="post">
 
-                    <div class="info">
-                        <input
-                            class="fname"
-                            type="text"
-                            name="name"
-                            placeholder="Nombre completo"
-                        />
-                        <input type="text" name="name" placeholder="Email" />
+            <div class="title">
+                <i class="fas fa-pencil-alt"></i>
+                <h2>Regístrate aquí</h2>
+            </div>
 
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Descripción del problema"
-                        />
+            <div class="info">
+                {% csrf_token %}
+                {{ form }}
+            </div>
 
-                        <select name="Carrera">
-                            {%for carrera in carrera%}
-                                <div id="course-{{course.id}}" class="course">
-                                    <h2>{{carrera.carre}}</h2>
-                                </div>
-                            {% endfor %}
-                            
-                        </select>
-                    </div>
-
-            <div class="checkbox"></div>
-
-            <button type="submit" href="/">Registrarme</button>
+            <button type="submit">Registrarme</button>
         </form>
     </section>
+
+
 {% endblock %}
