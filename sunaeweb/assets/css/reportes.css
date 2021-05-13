@@ -14,3 +14,7 @@ section{
     text-decoration: underline;
     cursor:pointer;
 }
+
+table{
+    min-width: 50vw;
+}

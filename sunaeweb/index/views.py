@@ -2,6 +2,7 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Pregunta
+from .forms import *
 from asesorias.models import Asesoria
 from django.utils import timezone
 from carreras.models import Carrera
@@ -10,20 +11,22 @@ import django.apps
 
 # Create your views here.
 def home(request, *args, **kwargs):
-    carre = Carrera.objects.filter(activo__exact=True)
-    context = {
-        'carre': carre
-    }
-    return render(request, 'home.html', context=context)
-    #return render(request, 'error404.html', context=context)
+	carre = Carrera.objects.filter(activo__exact=True)
+	context = {
+		'carre': carre
+	}
+	return render(request, 'home.html', context=context)
+
+
+# return render(request, 'error404.html', context=context)
 
 
 def carrera(request, id):
-    obj = get_object_or_404(Carrera, id=id) 
-    context = {
-        'object': obj
-    }
-    return render(request, 'carrera.html', context=context)
+	obj = get_object_or_404(Carrera, id=id)
+	context = {
+		'object': obj
+	}
+	return render(request, 'carrera.html', context=context)
 
 
 # def portfolio(request, *args, **kwargs):
@@ -35,46 +38,77 @@ def carrera(request, id):
 
 
 def faq(request, *args, **kwargs):
-    ques = Pregunta.objects.filter(activa__exact=True)
-    context = {
-        'ques': ques
-    }
-    return render(request, 'faq.html', context=context)
+	ques = Pregunta.objects.filter(activa__exact=True)
+	context = {
+		'ques': ques
+	}
+	return render(request, 'faq.html', context=context)
 
 
 ##########ERROR HANDLERS#############
 def handler404(request, *args, **argv):
-    return render(request, 'error404.html')
+	return render(request, 'error404.html')
 
 
 def handler500(request, *args, **argv):
-    return render(request, 'error404.html')
+	return render(request, 'error404.html')
 
 
 def filterModels(allowed, all):
-    filtered = []
-    for gen_class in all:
-        for a in allowed:
-            if a in str(gen_class):
-                filtered.append(gen_class)
-                break
-    return filtered
+	filtered = []
+	for gen_class in all:
+		for a in allowed:
+			if a in str(gen_class):
+				filtered.append(gen_class)
+				break
+	return filtered
 
 
 @login_required(login_url="/admin/login/")
 def reports(request, *args, **kwargs):
-    allowed_classname = ["Carrera", "Instructor", "Coordinador", "Curso", "Asesoria"]
-    models_class = filterModels(allowed_classname, django.apps.apps.get_models())
-    models = []
-    for c in models_class:
-        d = {'name': c.__name__,
-            'headings': [field.name for field in filter(lambda x: not 'Rel' in str(x), c._meta.get_fields())]}
-        d['rows'] = list(map(lambda tuple: [getattr(tuple, field) for field in d['headings']], c.objects.all()))
-        models.append(d)
-    context = {
-        'date': timezone.now().date(),
-        'models': models
-    }
-    return render(request, 'admin/reporte.html', context)
+	allowed_classname = ["Carrera", "Instructor", "Coordinador", "Curso", "Asesoria"]
+	models_class = filterModels(allowed_classname, django.apps.apps.get_models())
+	models = []
+	for c in models_class:
+		d = {'name': c.__name__,
+			 'headings': [field.name for field in filter(lambda x: not 'Rel' in str(x), c._meta.get_fields())]}
+		d['rows'] = list(map(lambda tuple: [getattr(tuple, field) for field in d['headings']], c.objects.all()))
+		models.append(d)
+	context = {
+		'date': timezone.now().date(),
+		'models': models
+	}
+	return render(request, 'admin/reporte.html', context)
 
 
+@login_required(login_url="/admin/login/")
+def asesorias_manage(request):
+	if request.method == 'POST':
+		action = int(request.POST['action'][0])
+		objs = list(map(lambda x: int(x), request.POST.getlist('asesorias')))
+		if action == 1:
+			resend_email(objs)
+		else:
+			mark_complete(objs)
+	groups_carreras = Asesoria.objects.all().values('carrera__nombre').distinct()
+	carreras = []
+	for carrera in groups_carreras:
+		print(carrera)
+		name = carrera['carrera__nombre']
+		asesorias = Asesoria.objects.filter(carrera__nombre=name, activo=True)
+		form = AsesoriasManageForm(queryset=asesorias)
+		carreras.append({
+			'name': name,
+			'form': form
+		})
+		context = {'carreras': carreras}
+		print(carreras)
+	return render(request, 'admin/asesorias_manage.html', context)
+
+
+def resend_email(asesorias):
+	pass # TODO resend email and mark complete
+
+
+def mark_complete(asesorias):
+	pass

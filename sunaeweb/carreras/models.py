@@ -1,10 +1,11 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Carrera(models.Model):
     nombre = models.CharField(max_length=20, unique=True)
     descripcion = models.TextField()
-    imagen = models.ImageField(default=None, upload_to='assets/img/carreras', null=True)
+    imagen = models.ImageField(default=None, upload_to='assets/img/carreras', null=True, blank=True)
     activo = models.BooleanField(default=True)
 
     def get_absolute_url(self):
@@ -13,22 +14,24 @@ class Carrera(models.Model):
     def __str__(self):
         return self.nombre
 
+
 class Instructor(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
     materia = models.CharField(max_length=40, null=True)
     correo = models.EmailField()
     descripcion = models.TextField(default="")
-    imagen = models.ImageField(default=None, upload_to='assets/img/instructores')
+    imagen = models.ImageField(default=None, upload_to='assets/img/instructores', blank=True)
     activo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nombre
 
+
 class Coordinador(models.Model):
     carrera = models.OneToOneField(Carrera, on_delete=models.CASCADE)
     coordinador = models.OneToOneField(Instructor, on_delete=models.CASCADE)
-    imagen = models.ImageField(default=None, upload_to='assets/img/coordinadores', null=True)
+    imagen = models.ImageField(default=None, upload_to='assets/img/coordinadores', null=True, blank=True)
     activo = models.BooleanField(default=True)
     
     def __str__(self):
