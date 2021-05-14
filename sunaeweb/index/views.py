@@ -87,13 +87,12 @@ def asesorias_manage(request):
 		action = int(request.POST['action'][0])
 		objs = list(map(lambda x: int(x), request.POST.getlist('asesorias')))
 		if action == 1:
-			resend_email(objs)
-		else:
 			mark_complete(objs)
+		elif action == 2:
+			resend_email(objs)
 	groups_carreras = Asesoria.objects.all().values('carrera__nombre').distinct()
 	carreras = []
 	for carrera in groups_carreras:
-		print(carrera)
 		name = carrera['carrera__nombre']
 		asesorias = Asesoria.objects.filter(carrera__nombre=name, activo=True)
 		form = AsesoriasManageForm(queryset=asesorias)
@@ -102,13 +101,18 @@ def asesorias_manage(request):
 			'form': form
 		})
 		context = {'carreras': carreras}
-		print(carreras)
 	return render(request, 'admin/asesorias_manage.html', context)
 
 
 def resend_email(asesorias):
-	pass # TODO resend email and mark complete
+	for asesoria_id in asesorias:
+		asesoria = Asesoria.objects.get(id=asesoria_id)
+		send_mail(subject="Asesoría " + asesoria.alumno, message=asesoria.description, from_email="prueba@localhost.com",
+				recipient_list=[Coordinador.objects.get(carrera=asesoria.carrera).coordinador.correo])
 
 
 def mark_complete(asesorias):
-	pass
+	for asesoria_id in asesorias:
+		asesoria = Asesoria.objects.get(id=asesoria_id)
+		asesoria.activo = False
+		asesoria.save()
