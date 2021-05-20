@@ -2,20 +2,18 @@
 
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-        <a href="{% url 'index' %}" class="logo mr-auto"><img src="{% static 'img/admin/logo-principal.png' %}" alt="" class="img-fluid"></a>
+        <a href="{% url 'index' %}" class="logo mr-auto"><img src="{% static 'img/admin/logo-principal.png' %}" alt="Logo SUNAE" class="img-fluid"></a>
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li class="active"><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#services">Carreras</a></li>
-                <li><a href="#portfolio">Instructores</a></li>
-                <li><a href="#team">Equipo</a></li>
-                <!-- * Puede servir para la seccion de carreras-->
-<!--                 <li class="drop-down"><a href="">Drop Down</a>
+                <li class="drop-down"><a href="">Carreras</a>
                     <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="drop-down"><a href="#">Deep Drop Down</a>
+                        {% for carrera in object %}
+                            <li><a href='{{ carrera.get_absolute_url }}'>{{carrera.nombre}}</a></li>
+                        {% endfor %}
+                        <!-- PUEDE SERVIR EN CASO DE REQUERIR UN DEEP DRROP DOWN -->
+                        <!--li class="drop-down"><a href="#">Deep Drop Down</a>
                             <ul>
                                 <li><a href="#">Deep Drop Down 1</a></li>
                                 <li><a href="#">Deep Drop Down 2</a></li>
@@ -23,17 +21,15 @@
                                 <li><a href="#">Deep Drop Down 4</a></li>
                                 <li><a href="#">Deep Drop Down 5</a></li>
                             </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
+                        </li-->
                     </ul>
-                </li> -->
-                <li><a href="#contact">Contacto</a></li>
-
+                </li>
+                <li><a href="{% url 'cursos' %}">Cursos</a></li>
+                <li><a href="{% url 'asesorias' %}">Asesorias</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>
             </ul>
         </nav>
 
-        <a href="#about" class="get-started-btn scrollto">Inscríbete</a>
+        <a href="{% url 'cursos' %}" class="get-started-btn scrollto">Inscríbete</a>
     </div>
 </header>

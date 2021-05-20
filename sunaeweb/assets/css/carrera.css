@@ -9,10 +9,15 @@ section {
     
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .title {
     font-weight: 600;
+}
+
+section img {
+    width: 150px;
 }
 
 section > p {

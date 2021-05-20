@@ -11,10 +11,10 @@
 {% endblock %}
 
 {% block body %}
-
     <section>
-        <h1 class="title">{{object.nombre}}</h1>
-        <p>{{object.descripcion}}</p>
+        <h1 class="title">{{carrera.nombre}}</h1>
+        <img src="{{ carrera.imagen.url }}" />
+        <p>{{carrera.descripcion}}</p>
         
         <div class="">
             {% for i in instructor %}
@@ -30,7 +30,6 @@
             {% endfor %}
         </div>
     </section>
-
 {% endblock %}
 
 {% block scripts %}

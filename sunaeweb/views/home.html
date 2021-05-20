@@ -31,8 +31,8 @@
                 </div>
             </div>
         </div>
-
-    </section><!-- End Hero -->
+    </section>
+    <!-- End Hero -->
 
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
@@ -73,7 +73,8 @@
             </div>
 
         </div>
-    </section><!-- End Featured Services Section -->
+    </section>
+    <!-- End Featured Services Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -104,7 +105,8 @@
             </div>
 
         </div>
-    </section><!-- End About Section -->
+    </section>
+    <!-- End About Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
@@ -138,7 +140,8 @@
             </div>
 
         </div>
-    </section><!-- End Counts Section -->
+    </section>
+    <!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
@@ -151,24 +154,24 @@
             </div>
 
             <div class="carreras">
-                {% for carrera in carre %}
+                {% for carrera in object %}
                     <div class="">
                         <div class="">        
                             <a href='{{ carrera.get_absolute_url }}'>{{carrera.nombre}}</a>
                             <a href='{{ carrera.get_absolute_url }}'>
-                                <img src="{{BASIC_DIR}}/{{carrera.imagen.url}}" />
+                                <img src="{{ carrera.imagen.url }}" />
                             </a>
                             <p>{{carrera.descripcion}}</p>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-
         </div>
-    </section><!-- End Services Section -->
+    </section>
+    <!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!--<section id="portfolio" class="portfolio">
         <div class="container">
 
             <div class="section-title">
@@ -178,10 +181,11 @@
             </div>
             
         </div>
-    </section><!-- End Portfolio Section -->
+    </section>-->
+    <!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <!--<section id="testimonials" class="testimonials section-bg">
         <div class="container">
 
             <div class="section-title">
@@ -194,7 +198,6 @@
 
                 <div class="testimonial-item">
                     <p>
-                    <!--
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                         Soy el hijo de izzo en el fortnite
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
@@ -248,8 +251,9 @@
                     <h4>Entrepreneur</h4>
                 </div>
             </div>
-        </div>-->
-    </section><!-- End Testimonials Section -->
+        </div>
+    </section>-->
+    <!-- End Testimonials Section -->
     
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
@@ -259,15 +263,15 @@
                 <p> En el camino hacia el éxito, la variable no son las misiones que establecemos, sino nuestra capacidad y
                     disposición para alcanzarlas. Cuando tienes grandes metas en la vida, ¡te empujarán a alcanzar más!
                     Entonces atrévete a soñar en grande.</p>
-                <a class="cta-btn" href="#">Iniciar mi camino</a>
+                <!--a class="cta-btn" href="#">Iniciar mi camino</a-->
             </div>
         </div>
-    </section><!-- End Cta Section -->
+    </section>
+    <!-- End Cta Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    <!--<section id="team" class="team section-bg">
         <div class="container">
-        <!--
             <div class="section-title">
                 <span>Nuestro equipo</span>
                 <h2>Nuestro equipo</h2>
@@ -329,11 +333,12 @@
                     </div>
                 </div>
             </div>
-        </div>-->
-    </section><!-- End Team Section -->
+        </div>
+    </section>-->
+    <!-- End Team Section -->
     
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <!--<section id="contact" class="contact">
         <div class="container">
 
             <div class="section-title">
@@ -346,13 +351,12 @@
 
                 <div class="col-lg-5 d-flex align-items-stretch">
                     <div class="info">
-                    <!--
                         <div class="address">
                             <i class="icofont-google-map"></i>
                             <h4>Localización:</h4>
                             <p>A108 Adam Street, New York, NY 535022</p>
                         </div>
-                    -->
+
                         <div class="email">
                             <i class="icofont-envelope"></i>
                             <h4>Email:</h4>
@@ -364,13 +368,11 @@
                             <h4>Número:</h4>
                             <p>+52 55 6219 7783</p>
                         </div>
-                        <!--
+
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
                             frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-                        -->
-                    </div>
-
+                        </div>
                 </div>
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
@@ -411,6 +413,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- End Contact Section -->
+    </section>-->
+    <!-- End Contact Section -->
 
 {% endblock %} 

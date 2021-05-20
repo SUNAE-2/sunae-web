@@ -1,5 +1,5 @@
 from django.http import HttpResponseNotFound
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Pregunta
 from .forms import *
@@ -11,22 +11,11 @@ import django.apps
 
 # Create your views here.
 def home(request, *args, **kwargs):
-	carre = Carrera.objects.filter(activo__exact=True)
-	context = {
-		'carre': carre
-	}
-	return render(request, 'home.html', context=context)
-
-
-# return render(request, 'error404.html', context=context)
-
-
-def carrera(request, id):
-	obj = get_object_or_404(Carrera, id=id)
+	obj = Carrera.objects.filter(activo__exact=True)
 	context = {
 		'object': obj
 	}
-	return render(request, 'carrera.html', context=context)
+	return render(request, 'home.html', context=context)
 
 
 # def portfolio(request, *args, **kwargs):
@@ -38,20 +27,30 @@ def carrera(request, id):
 
 
 def faq(request, *args, **kwargs):
-	ques = Pregunta.objects.filter(activa__exact=True)
-	context = {
-		'ques': ques
+    ques = Pregunta.objects.filter(activa__exact=True)
+    obj = Carrera.objects.filter(activo__exact=True)
+    context = {
+		'ques': ques,
+        'object': obj
 	}
-	return render(request, 'faq.html', context=context)
+    return render(request, 'faq.html', context=context)
 
 
 ##########ERROR HANDLERS#############
 def handler404(request, *args, **argv):
-	return render(request, 'error404.html')
+    obj = Carrera.objects.filter(activo__exact=True)
+    context = {
+        'object': obj
+    }
+    return render(request, 'error404.html', context=context)
 
 
 def handler500(request, *args, **argv):
-	return render(request, 'error404.html')
+    obj = Carrera.objects.filter(activo__exact=True)
+    context = {
+        'object': obj
+    }
+    return render(request, 'error404.html', context=context)
 
 
 def filterModels(allowed, all):
@@ -71,7 +70,7 @@ def reports(request, *args, **kwargs):
 	models = []
 	for c in models_class:
 		d = {'name': c.__name__,
-			 'headings': [field.name for field in filter(lambda x: not 'Rel' in str(x), c._meta.get_fields())]}
+			'headings': [field.name for field in filter(lambda x: not 'Rel' in str(x), c._meta.get_fields())]}
 		d['rows'] = list(map(lambda tuple: [getattr(tuple, field) for field in d['headings']], c.objects.all()))
 		models.append(d)
 	context = {

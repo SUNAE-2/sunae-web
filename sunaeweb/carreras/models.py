@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-
+    
 class Carrera(models.Model):
     nombre = models.CharField(max_length=20, unique=True)
     descripcion = models.TextField()
