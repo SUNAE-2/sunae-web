@@ -4,6 +4,17 @@
     justify-content:center
 }
 
+#carousel .carousel-inner {
+    background-color: #CCC;
+    display: flex;
+    align-items: center;
+    justify-content:center
+}
+
+#carousel img {
+    width: 600px;
+}
+
 .carreras {
     display: flex;
     flex-wrap: wrap;

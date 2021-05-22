@@ -6,16 +6,19 @@ from .forms import *
 from asesorias.models import Asesoria
 from django.utils import timezone
 from carreras.models import Carrera
+from cursos.models import Curso
 import django.apps
 
 
 # Create your views here.
 def home(request, *args, **kwargs):
-	obj = Carrera.objects.filter(activo__exact=True)
-	context = {
-		'object': obj
+    obj = Carrera.objects.filter(activo__exact=True)
+    cursos = Curso.objects.filter(activo__exact=True)
+    context = {
+		'object': obj,
+        'courses': cursos,
 	}
-	return render(request, 'home.html', context=context)
+    return render(request, 'home.html', context=context)
 
 
 # def portfolio(request, *args, **kwargs):
@@ -29,9 +32,11 @@ def home(request, *args, **kwargs):
 def faq(request, *args, **kwargs):
     ques = Pregunta.objects.filter(activa__exact=True)
     obj = Carrera.objects.filter(activo__exact=True)
+    cursos = Curso.objects.filter(activo__exact=True)
     context = {
 		'ques': ques,
-        'object': obj
+        'object': obj,
+        'courses': cursos,
 	}
     return render(request, 'faq.html', context=context)
 
@@ -39,18 +44,22 @@ def faq(request, *args, **kwargs):
 ##########ERROR HANDLERS#############
 def handler404(request, *args, **argv):
     obj = Carrera.objects.filter(activo__exact=True)
+    cursos = Curso.objects.filter(activo__exact=True)    
     context = {
-        'object': obj
+        'object': obj,
+        'courses': cursos,
     }
     return render(request, 'error404.html', context=context)
 
 
 def handler500(request, *args, **argv):
     obj = Carrera.objects.filter(activo__exact=True)
+    cursos = Curso.objects.filter(activo__exact=True)
     context = {
-        'object': obj
+        'object': obj,
+        'courses': cursos,
     }
-    return render(request, 'error404.html', context=context)
+    return render(request, 'error500.html', context=context)
 
 
 def filterModels(allowed, all):

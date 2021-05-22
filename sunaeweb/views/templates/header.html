@@ -24,12 +24,12 @@
                         </li-->
                     </ul>
                 </li>
-                <li><a href="{% url 'cursos' %}">Cursos</a></li>
                 <li><a href="{% url 'asesorias' %}">Asesorias</a></li>
                 <li><a href="{% url 'faq' %}">FAQ</a></li>
             </ul>
         </nav>
-
-        <a href="{% url 'cursos' %}" class="get-started-btn scrollto">Inscríbete</a>
+        {% if courses|length %}
+            <a href="{% url 'cursos' %}" class="get-started-btn scrollto">Cursos</a>
+        {% endif %}
     </div>
 </header>

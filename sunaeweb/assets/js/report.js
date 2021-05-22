@@ -1,4 +1,3 @@
-
 window.addEventListener("load", function(){
     document.getElementById("descarga").addEventListener("click", function(){
         let workbook = XLSX.utils.book_new();
