@@ -188,8 +188,8 @@
         }
     });
 
-    $('.accordion').accordion({
-    })
+/*     $('.accordion').accordion({
+    }) */
 
     // Portfolio details carousel
     $(".portfolio-details-carousel").owlCarousel({

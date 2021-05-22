@@ -844,7 +844,7 @@ section {
 }
 
 .testimonials .owl-dot.active {
-    background-color: #16df7e !important;
+    background-color: var(--primary-color-blue) !important;
 }
 
 @media (max-width: 767px) {

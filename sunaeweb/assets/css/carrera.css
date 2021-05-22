@@ -1,8 +1,4 @@
-:root {
-    --padding-section-left-right: 25rem;
-}
-
-section {
+section:first-of-type {
     padding: 0 8rem;
     padding-top: calc(80px + 4rem);
     text-align: center;
@@ -16,70 +12,46 @@ section {
     font-weight: 600;
 }
 
-section img {
+section:first-of-type > h1 {
+    font-size: 3rem;
+}
+
+section:first-of-type > img {
     width: 150px;
 }
 
-section > p {
-    padding: 0 var(--padding-section-left-right);
-    text-align: justify;
+section:first-of-type > p {
+    padding: 0 10rem;
+    text-align: left;
+    font-weight: 200;
+    font-size: 1.4rem;
 }
 
-section > div {
-    padding: 2rem var(--padding-section-left-right);
-    
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
+@media screen and (max-width: 600px) {
+    section:first-of-type {
+        padding: 0 2.5rem;
+        padding-top: calc(80px + 4rem);
+    }
+
+    section:first-of-type > h1 {
+        font-size: 2rem;
+    }
+
+    section:first-of-type > p {
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 300;
+    }
 }
 
-section > div > div {
-    padding: 2rem 1rem;
-    width: calc(100% / 2);
-}
+@media screen and (min-width: 601px) and (max-width: 1100px) {
+    section:first-of-type > h1 {
+        font-size: 2.5rem;
+    }
 
-section > div > div > div:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
-}
-
-section > div > div > div:hover > p:nth-of-type(1) {
-    color: var(--primary-color-blue)
-}
-
-section > div > div > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    border: 1px solid #CCC;
-    border-radius: 30px;
-    padding: 2rem 1rem;
-    max-width: 100%;
-    height: 100%;
-}
-
-section > div > div > div img {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 1.5rem;
-    border-radius: 50%;
-    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-section > div > div > div > p:nth-of-type(1) {
-    font-weight: 700;
-    font-size: 1.6rem;
-}
-
-section > div > div > div > p:nth-of-type(2) {
-    margin-bottom: 0.2rem;
-}
-
-section > div > div > div > p:nth-of-type(4) {
-    min-height: 300px;
-    max-height: 300px;
-    overflow: auto;
-    scroll-behavior: smooth;
+    section:first-of-type > p {
+        padding: 0;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
 }

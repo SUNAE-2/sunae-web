@@ -15,21 +15,27 @@
         <h1 class="title">{{carrera.nombre}}</h1>
         <img src="{{ carrera.imagen.url }}" />
         <p>{{carrera.descripcion}}</p>
-        
-        <div class="">
-            {% for i in instructor %}
-            <div class="instructor">
-                <div>    
-                    <img src="{{BASIC_DIR}}/{{i.imagen.url}}" width="120" />
-                    <p>{{i.nombre}}</p>
-                    <p>Imparte</p>
-                    <p>{{i.materia}}</p>
-                    <p>{{i.descripcion}}</p>
-                </div>
+    </section>
+
+    <section id="testimonials" class="testimonials section-bg">
+        <div class="container">
+            <div class="owl-carousel testimonials-carousel">
+                {% for i in instructor %}
+                    <div class="testimonial-item">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            {{i.descripcion}}
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                        <img src="{{i.imagen.url}}" class="testimonial-img" alt="">
+                        <h3 class="title">{{i.nombre}}</h3>
+                        <h4>{{i.materia}}</h4>
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </section>
+
 {% endblock %}
 
 {% block scripts %}
