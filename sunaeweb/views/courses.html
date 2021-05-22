@@ -16,10 +16,12 @@
             {% for course in courses %}
                 <div class="course">
                     <div id="course-{{course.id}}">
-                        <h2>{{course.nombre}}</h2>
+                        <h2 class="title">{{course.nombre}}</h2>
+                        <img src="{{ course.carrera.imagen.url }}" />
                         <p>{{course.descripcion}}</p>
-                        <h3>{{course.fechaInicio}}</h3>
-                        <h3>{{course.fechaFinal}}</h3>
+                        <h4><span>Fecha de inicio</span>: {{course.fechaInicio}}</h4>
+                        <h4><span>Fecha de cierre</span>: {{course.fechaFinal}}</h4>
+                        <h4><span>Precio</span>: ${{course.precio|floatformat:"0"}}</h4>
                     </div>
                 </div>
             {% endfor %}
@@ -27,4 +29,8 @@
             <h2>NO HAY CURSOS DISPONIBLES POR EL MOMENTO</h2>
         {% endif %}
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/getColor.js' %}" defer></script>
 {% endblock %}

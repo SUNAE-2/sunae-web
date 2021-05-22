@@ -1,0 +1,19 @@
+.back-to-top i {
+    background: var(--primary-color-blue); 
+}
+
+.back-to-top i:hover {
+    background: var(--secondary-color-blue); 
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"] {
+    background: var(--primary-color-blue);
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+    background: var(--secondary-color-blue); 
+}
+
+#footer .footer-top .social-links a:hover {
+    background: var(--primary-color-blue);
+}

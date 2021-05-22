@@ -11,7 +11,6 @@
 {% endblock %} 
 
 {% block body %}
-
     <!-- ======= Hero Section ======= -->
     <section id="estudiantes" class="">
 
@@ -188,7 +187,7 @@
                 {% for carrera in object %}
                     <div class="">
                         <div class="">        
-                            <a href='{{ carrera.get_absolute_url }}'>{{carrera.nombre}}</a>
+                            <a class="title" href='{{ carrera.get_absolute_url }}'>{{carrera.nombre}}</a>
                             <a href='{{ carrera.get_absolute_url }}'>
                                 <img src="{{ carrera.imagen.url }}" />
                             </a>
@@ -450,5 +449,8 @@
         </div>
     </section>-->
     <!-- End Contact Section -->
-
 {% endblock %} 
+
+{% block scripts %}
+    <script src="{% static 'js/getColor.js' %}" defer></script>
+{% endblock %}

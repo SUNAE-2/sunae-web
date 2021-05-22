@@ -14,7 +14,6 @@ h2 {
     align-items: center;
     height: 100%;
     padding: 25px;
-    background: rgba(0, 0, 0, 0.5);
     padding-top: 10rem;
 }
 
@@ -106,7 +105,7 @@ button:hover, .btn-item:hover {
     background: #85d6de;
 }
 
-@media (min-width: 568px) {
+@media screen and (min-width: 568px) {
     html, body {
         height: 100%;
     }

@@ -133,7 +133,7 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active > a,
 .nav-menu li:hover > a {
-    color: #14c871;
+    color: var(--primary-color-blue);
 }
 
 .nav-menu .drop-down ul {
@@ -172,7 +172,7 @@ h6 {
 .nav-menu .drop-down ul a:hover,
 .nav-menu .drop-down ul .active > a,
 .nav-menu .drop-down ul li:hover > a {
-    color: #14c871;
+    color: var(--primary-color-blue);
 }
 
 .nav-menu .drop-down > a:after {

@@ -20,6 +20,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
+    text-align: center
 }
 
 .carreras > div {
@@ -53,10 +54,8 @@
 .carreras > div > div > a:first-child {
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
-    color: var(--primary-color-blue);
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 2rem;
 }
 
 .carreras > div > div > a > img {
@@ -71,6 +70,53 @@
     max-height: 200px;
     overflow: auto;
     scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 600px) {
+    .carreras > div > div > a:first-of-type {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .carreras > div {
+        padding: 5%;
+        width: 100%;
+    }
+
+    .carreras > div > div > a > img {
+        margin: 0.6rem 0;
+        width: 80px;
+    }
+
+    .carreras > div > div > p {
+        font-size: 1rem;
+        font-weight: 300;
+        min-height: 120px;
+        max-height: 120px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1100px) {
+    .carreras > div > div > a:first-of-type {
+        font-size: 1.7rem;
+        font-weight: 400;
+    }
+
+    .carreras > div {
+        width: calc(100% / 2);
+    }
+
+    .carreras > div > div > a > img {
+        margin: 1rem 0;
+        width: 100px;
+    }
+
+    .carreras > div > div > p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        min-height: 150px;
+        max-height: 150px;
+    }
 }
 
 /* CHANGE COLORS BOOTSTRAP */
@@ -88,14 +134,6 @@ a {
 .nav-menu .drop-down ul .active > a,
 .nav-menu .drop-down ul li:hover > a {
     color: var(--primary-color-blue); 
-}
-
-.back-to-top i {
-    background: var(--primary-color-blue); 
-}
-
-.back-to-top i:hover {
-    background: var(--secondary-color-blue); 
 }
 
 .mobile-nav a:hover,
@@ -211,16 +249,4 @@ a {
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
     background-color: var(--primary-color-blue) !important;
-}
-
-#footer .footer-top .footer-newsletter form input[type="submit"] {
-    background: var(--primary-color-blue);
-}
-
-#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-    background: var(--secondary-color-blue); 
-}
-
-#footer .footer-top .social-links a:hover {
-    background: var(--primary-color-blue);
 }
