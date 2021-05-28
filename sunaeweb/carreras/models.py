@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
     
 class Carrera(models.Model):
@@ -27,7 +29,6 @@ class Instructor(models.Model):
     def __str__(self):
         return self.nombre
 
-
 class Coordinador(models.Model):
     carrera = models.OneToOneField(Carrera, on_delete=models.CASCADE)
     coordinador = models.OneToOneField(Instructor, on_delete=models.CASCADE)
@@ -36,3 +37,10 @@ class Coordinador(models.Model):
     
     def __str__(self):
         return self.carrera.nombre + " - " + self.coordinador.nombre
+
+@receiver(post_save, sender=Carrera)
+def carreraInactiva(sender, instance, created, **kwargs):
+    if not created:
+        ac = instance.activo
+        Instructor.objects.filter(carrera=instance).update(activo=ac)
+        Coordinador.objects.filter(carrera=instance).update(activo=ac)
