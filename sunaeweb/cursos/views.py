@@ -21,31 +21,24 @@ def stripe_config(request):
         return JsonResponse(stripe_config, safe=False)
 
 @csrf_exempt
-def create_checkout_session(request):
+def create_checkout_session(request, name, price):
     if request.method == 'GET':
         domain_url = 'http://localhost:8000/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
-            # Create new Checkout Session for the order
-            # Other optional params include:
-            # [billing_address_collection] - to display billing address details on the page
-            # [customer] - if you have an existing Stripe Customer ID
-            # [payment_intent_data] - capture the payment later
-            # [customer_email] - prefill the email input in the form
-            # For full details see https://stripe.com/docs/api/checkout/sessions/create
-
             # ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
             checkout_session = stripe.checkout.Session.create(
                 success_url=domain_url + 'success?session_id={CHECKOUT_SESSION_ID}',
                 cancel_url=domain_url + 'cancelled/',
                 payment_method_types=['card'],
                 mode='payment',
+                allow_promotion_codes=True,
                 line_items=[
                     {
-                        'name': 'is it me or SUNAE is getting kinda hot?🥵',
+                        'name': name,
                         'quantity': 1,
                         'currency': 'mxn',
-                        'amount': '100000',
+                        'amount': price+'00',
                     }
                 ]
             )

@@ -22,7 +22,7 @@
                         <h4><span>Fecha de inicio</span>: {{course.fechaInicio}}</h4>
                         <h4><span>Fecha de cierre</span>: {{course.fechaFinal}}</h4>
                         <h4><span>Precio</span>: ${{course.precio|floatformat:"0"}}</h4>
-                        <a class="cta-btn" onclick="enroll()">Inscribirme</a>
+                        <a class="cta-btn" onclick="enroll('{{course.nombre}}',{{course.precio}})">Inscribirme</a>
                     </div>
                 </div>
             {% endfor %}

@@ -7,8 +7,8 @@ fetch("./config/")
   stripe = Stripe(data.publicKey);
 });
 
-function enroll() {
-    fetch("./create-checkout-session/")
+function enroll(name,price) {
+    fetch("./create-checkout-session/"+name+"/"+price)
     .then((result) => { return result.json(); })
     .then((data) => {
       console.log(data);
